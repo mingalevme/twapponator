@@ -1,0 +1,36 @@
+{
+    "name": "mingalevme/twapponator",
+    "description": "TWitter APPlication ONly authenticATOR",
+    "keywords": [
+        "twitter",
+        "api",
+        "authentication",
+        "application",
+        "only"
+    ],
+    "homepage": "https://github.com/mingalevme/twapponator",
+    "version": "1.0.0",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Mingalev Mikhail",
+            "email": "mingalevme@gmail.com",
+            "homepage": "https://github.com/mingalevme",
+            "role": "developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "ext-curl": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "slim/slim": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Twapponator\\": "src/Twapponator"
+        }
+    }
+}
