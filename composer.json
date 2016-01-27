@@ -9,7 +9,7 @@
         "only"
     ],
     "homepage": "https://github.com/mingalevme/twapponator",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -23,10 +23,6 @@
     "require": {
         "php": ">=5.3.0",
         "ext-curl": "*"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "*",
-        "slim/slim": "*"
     },
     "autoload": {
         "psr-4": {
