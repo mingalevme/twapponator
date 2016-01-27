@@ -39,7 +39,7 @@ abstract class Core
         \curl_close($ch);
         
         if ($response === FALSE || is_array($info) === FALSE || $info['http_code'] !== 200) {
-            self::throwError($response, $info);
+            self::throwException($response, $info);
         }
         
         $data = \json_decode($response, TRUE);
@@ -56,11 +56,11 @@ abstract class Core
         if (is_string($response)) {
             try {
                 @$data = \json_decode($response, TRUE);
-                if (isset($data['errors'][0])) {
-                    throw new Exception($data['errors'][0]['message'], $data['errors'][0]['code']);
-                }
             } catch (\Exception $e) {
                 throw new Exception("Unknown error: {$response}");
+            }
+            if (isset($data['errors'][0])) {
+                throw new Exception($data['errors'][0]['message'], $data['errors'][0]['code']);
             }
         } else {
             $httpErrorCode = isset($info['http_code']) ? $info['http_code'] : 500;
@@ -74,7 +74,7 @@ abstract class Core
             }
         }
         
-        throw new Exception('Unknown Connection Error');
+        throw new Exception('Unknown Connection Error' . (is_string($response) ? ": {$response}" : ''));
     }
 
     /**
@@ -106,7 +106,7 @@ abstract class Core
         \curl_close($ch);
         
         if ($response === FALSE || is_array($info) === FALSE || $info['http_code'] !== 200) {
-            self::throwError($response, $info);
+            self::throwException($response, $info);
         }
         
         return \json_decode($response, TRUE);
