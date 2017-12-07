@@ -12,6 +12,6 @@ class Client extends Core
      */
     public function status($id)
     {
-        return $this->request(self::STATUSES_SHOW . '?id=' . $id);
+        return $this->request(self::STATUSES_SHOW . '?tweet_mode=extended&id=' . $id);
     }
 }
