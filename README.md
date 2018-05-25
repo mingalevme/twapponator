@@ -21,7 +21,7 @@ The recomended way to install **Twapponator** is through [Composer](http://getco
 curl -sS https://getcomposer.org/installer | php
 
 # Add Twapponator as a dependency
-php composer.phar require mingalevme/twapponator:dev-master
+php composer.phar require mingalevme/twapponator
 ```
 
 After installing, you need to require Composer's autoloader:
@@ -46,16 +46,16 @@ Once installed you can easily access all of the Twitter API endpoints supported 
 <?php
 
 // Obtain Bearer Token (if needed)
-$token = \Twapponator\Client::obtainBearerToken('consumer_key', 'consumer_secret');
+$token = \Twapponator\Twapponator::obtainBearerToken('consumer_key', 'consumer_secret');
 
 // Now you can cache it for future use
 $someCacheStorage->set('twitter_bearer_token', $token);
 
 
 // Init Twapponator Object
-$twapponator = new \Twapponator\Client($token);
+$twapponator = new \Twapponator\Twapponator($token);
 
-// Request API Enpoint data
+// Request API Endpoint data
 try {
     $data = $twapponator->request('https://api.twitter.com/1.1/statuses/show.json?id=' . $someTweetId);
 } catch (\Twapponator\Exception $e) {
