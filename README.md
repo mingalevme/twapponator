@@ -5,6 +5,13 @@ Twapponator - TWitter APPlication ONly authenticATOR
 
 **Twapponator** - Very simple PHP Twitter [Application Only](https://dev.twitter.com/oauth/application-only) Authentication Client.
 
+# Travis CI
+[![Build Status](https://travis-ci.org/mingalevme/twapponator.svg?branch=master)](https://travis-ci.org/mingalevme/twapponator)
+
+# Codecov
+[![codecov](https://codecov.io/gh/mingalevme/twapponator/branch/master/graph/badge.svg)](https://codecov.io/gh/mingalevme/twapponator)
+
+
 ## Installing via Composer
 
 The recomended way to install **Twapponator** is through [Composer](http://getcomposer.org/). 

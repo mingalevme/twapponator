@@ -2,13 +2,14 @@
 
 namespace Twapponator;
 
-class Client extends Core
+class Twapponator extends Core
 {
     const STATUSES_SHOW = 'https://api.twitter.com/1.1/statuses/show.json';
     
     /**
      * Returns a single Tweet, specified by the id parameter. The Tweet’s author will also be embedded within the tweet.
      * @param string $id
+     * @return array
      */
     public function status($id)
     {
