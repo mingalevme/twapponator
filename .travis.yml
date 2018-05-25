@@ -4,14 +4,18 @@ php:
   - '7.1'
   - '7.2'
 
+before_install:
+  - mkdir -p /tmp/coverage
+
 install:
   - composer self-update
   - composer install --no-interaction --prefer-source
 
 script:
-  - vendor/bin/phpunit --coverage-clover=coverage.xml
+  - vendor/bin/phpunit --coverage-php /tmp/coverage/coverage.cov
 
 after_success:
+  - vendor/bin/phpcov merge /tmp/coverage --clover coverage.xml
   - bash <(curl -s https://codecov.io/bash)
 
 env:
